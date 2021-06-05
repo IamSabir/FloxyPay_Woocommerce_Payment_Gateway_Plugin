@@ -122,6 +122,7 @@ function floxy_init_gateway_class()
             $customer_email = $order->get_billing_email();
             $customer_phone = $order->get_billing_phone();
             $amount = $order->get_total();
+			
                if($this->testmode === 'yes'){
                     $url1 = 'https://test-api.floxypay.com/onboard/user';
                     $url2 = 'https://test-api.floxypay.com/process/payment';
@@ -152,6 +153,10 @@ function floxy_init_gateway_class()
             ));
             $response = curl_exec($curl);
             $response = json_decode($response);
+			if($response->message){
+				wc_add_notice(  $response->message, 'error' );
+			}
+			
             $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
             if ($httpcode == 200) {
                 $curl = curl_init();
@@ -173,6 +178,7 @@ function floxy_init_gateway_class()
                 ));
                 $_response2 = curl_exec($curl);
                 $_response2 = json_decode($_response2);
+						
                 $httpcode_2 = curl_getinfo($curl, CURLINFO_HTTP_CODE);
                 if ($httpcode_2 == 200) {
                     $environment_url = $_response2->url;
