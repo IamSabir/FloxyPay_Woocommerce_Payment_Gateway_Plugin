@@ -1,3 +1,10 @@
-# FloxyPay_Woocommerce_Payment_Gateway_Plugin
 
-<h1>Welcome to WooCommerce FloxyPay Plugin</h1> 
+<style>
+  .h1{
+  .heading{
+  background: blue;
+  padding: 20px;
+  }
+  }
+  </style>
+<h1 clas="heading h1 text-center">Welcome to WooCommerce FloxyPay Plugin</h1> 
