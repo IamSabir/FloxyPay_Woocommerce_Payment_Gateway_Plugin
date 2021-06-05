@@ -1,10 +1,1 @@
-
-<style>
-  .h1{
-  .heading{
-  background: blue;
-  padding: 20px;
-  }
-  }
-  </style>
-<h1 clas="heading h1 text-center">Welcome to WooCommerce FloxyPay Plugin</h1> 
+<h1 style="color: #008cdd; padding: 10px; ">Welcome to WooCommerce FloxyPay Plugin</h1> 
